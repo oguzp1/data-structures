@@ -95,13 +95,13 @@ int main() {
 
 	while (!coordsEqual(&currentData.coords, &finalPoint)) {
 		if (check) {
-			if (currentData.coords.i != 0 && Maze[currentData.coords.i - 1][currentData.coords.j] != '#' && Maze[currentData.coords.i - 1][currentData.coords.j] != '#')
+			if (currentData.coords.i != 0 && Maze[currentData.coords.i - 1][currentData.coords.j] != '#' && Maze[currentData.coords.i - 1][currentData.coords.j] != 'O')
 				currentData.upAvailable = true;
-			if (currentData.coords.i != ROWCOUNT - 1 && Maze[currentData.coords.i + 1][currentData.coords.j] != '#'&& Maze[currentData.coords.i - 1][currentData.coords.j] != '#')
+			if (currentData.coords.i != ROWCOUNT - 1 && Maze[currentData.coords.i + 1][currentData.coords.j] != '#' && Maze[currentData.coords.i - 1][currentData.coords.j] != 'O')
 				currentData.downAvailable = true;
-			if (currentData.coords.j != 0 && Maze[currentData.coords.i][currentData.coords.j - 1] != '#'&& Maze[currentData.coords.i - 1][currentData.coords.j] != '#')
+			if (currentData.coords.j != 0 && Maze[currentData.coords.i][currentData.coords.j - 1] != '#' && Maze[currentData.coords.i - 1][currentData.coords.j] != 'O')
 				currentData.leftAvailable = true;
-			if (currentData.coords.j != COLCOUNT - 1 && Maze[currentData.coords.i][currentData.coords.j + 1] != '#'&& Maze[currentData.coords.i - 1][currentData.coords.j] != '#')
+			if (currentData.coords.j != COLCOUNT - 1 && Maze[currentData.coords.i][currentData.coords.j + 1] != '#' && Maze[currentData.coords.i - 1][currentData.coords.j] != 'O')
 				currentData.rightAvailable = true;
 
 			switch (cameFrom) {
