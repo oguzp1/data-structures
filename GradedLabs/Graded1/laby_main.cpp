@@ -29,10 +29,10 @@ void printMap(char Maze[ROWCOUNT][COLCOUNT + 1]) {
 }
 
 int decideRandom(LocationData *ld, int totalways) {
-	int randomnum = rand() % totalways, 
-		choice = UP, 
+	int randomnum = rand() % totalways,
+		choice = UP,
 		available[4] = {0};
-	
+
 	if (ld->upAvailable)
 		available[0] = 1;
 	if (ld->downAvailable)
@@ -58,7 +58,7 @@ int decideRandom(LocationData *ld, int totalways) {
 }
 
 int main() {
-	char Maze[ROWCOUNT][COLCOUNT + 1] = { 
+	char Maze[ROWCOUNT][COLCOUNT + 1] = {
 		"#O###################",
 		"#     #      #    # #",
 		"# ### # ###### ## # #",
@@ -72,7 +72,7 @@ int main() {
 		"# # #   # # #####   #",
 		"# # ##### # #   #####",
 		"#         #   #     #",
-		"###################E#" 
+		"###################E#"
 	};
 	Coordinate initialPoint = { 0, 1 },
 			   finalPoint = { 13, 19 },
@@ -97,11 +97,11 @@ int main() {
 		if (check) {
 			if (currentData.coords.i != 0 && Maze[currentData.coords.i - 1][currentData.coords.j] != '#' && Maze[currentData.coords.i - 1][currentData.coords.j] != 'O')
 				currentData.upAvailable = true;
-			if (currentData.coords.i != ROWCOUNT - 1 && Maze[currentData.coords.i + 1][currentData.coords.j] != '#' && Maze[currentData.coords.i - 1][currentData.coords.j] != 'O')
+			if (currentData.coords.i != ROWCOUNT - 1 && Maze[currentData.coords.i + 1][currentData.coords.j] != '#' && Maze[currentData.coords.i + 1][currentData.coords.j] != 'O')
 				currentData.downAvailable = true;
-			if (currentData.coords.j != 0 && Maze[currentData.coords.i][currentData.coords.j - 1] != '#' && Maze[currentData.coords.i - 1][currentData.coords.j] != 'O')
+			if (currentData.coords.j != 0 && Maze[currentData.coords.i][currentData.coords.j - 1] != '#' && Maze[currentData.coords.i][currentData.coords.j - 1] != 'O')
 				currentData.leftAvailable = true;
-			if (currentData.coords.j != COLCOUNT - 1 && Maze[currentData.coords.i][currentData.coords.j + 1] != '#' && Maze[currentData.coords.i - 1][currentData.coords.j] != 'O')
+			if (currentData.coords.j != COLCOUNT - 1 && Maze[currentData.coords.i][currentData.coords.j + 1] != '#' && Maze[currentData.coords.i][currentData.coords.j + 1] != 'O')
 				currentData.rightAvailable = true;
 
 			switch (cameFrom) {
